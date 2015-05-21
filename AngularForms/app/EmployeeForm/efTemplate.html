@@ -1,0 +1,79 @@
+﻿<form class="form-horizontal" role="form">
+
+    <fieldset>
+        <legend>Basic Information</legend>
+        <div class="form-group">
+            <label for="fullName" class="col-sm-3 control-label">Name</label>
+            <div class="col-sm-9">
+                <input type="text" name="fullName" id="fullName" class="form-control"
+                       ng-model="editableEmployee.fullName" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="notes" class="col-sm-3 control-label">Notes</label>
+            <div class="col-sm-9">
+                <textarea name="notes" id="notes" class="form-control" rows="5" cols="40"
+                          ng-model="editableEmployee.notes"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="department" class="col-sm-3 control-label">Department</label>
+            <div class="col-sm-9">
+                <select name="department" id="department" class="form-control"
+                        ng-model="editableEmployee.department"
+                        ng-options="dept for dept in departments"></select>
+            </div>
+        </div>
+    </fieldset><br />
+
+    <fieldset>
+        <legend>Perks</legend>
+        <div class="col-sm-offset-3 col-sm-9">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="perkLaptop"
+                           ng-model="editableEmployee.perkLaptop" />Company Laptop
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="perkStock"
+                           ng-model="editableEmployee.perkStock" />Company Stock
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="perkSixWeeks"
+                           ng-model="editableEmployee.perkSixWeeks" />Six Weeks
+                </label>
+            </div>
+        </div>
+    </fieldset><br />
+
+    <fieldset>
+        <legend>Payroll Type</legend>
+        <div class="col-sm-offset-3 col-sm-9">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="payrollType" value="fortnightly"
+                           ng-model="editableEmployee.payrollType" />Fortnightly
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="payrollType" value="monthly"
+                           ng-model="editableEmployee.payrollType" />Monthly
+                </label>
+            </div>
+        </div>
+    </fieldset><br /><br />
+
+    <div class="col-sm-offset-3 col-sm-9">
+        <input type="button" class="btn btn-default" value="Cancel"
+               ng-click="cancelForm()" />
+        <input type="button" class="btn btn-primary" value="Submit"
+               ng-click="submitForm()" />
+    </div>
+</form>
